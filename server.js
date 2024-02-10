@@ -1,15 +1,13 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express');
+var app = express();
+const path = require('path');
 
-const PORT=8080; 
+app.use(express.static('public'));
 
-fs.readFile('index.html', function (err, html) {
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname,"index.html"));
+})
 
-    if (err) throw err;    
-
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(PORT);
-});
+var server = app.listen(8080, function () {
+    console.log("Express App running at http://127.0.0.1:5000/");
+})
