@@ -9,5 +9,5 @@ app.get('/', function (req, res) {
 })
 
 var server = app.listen(8080, function () {
-    console.log("Express App running at http://127.0.0.1:5000/");
+    console.log("Express App running at http://localhost:8080/");
 })
