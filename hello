@@ -1,1 +1,7 @@
 hello
+
+pour synchroniser le repo avec la source du fork:
+gh repo sync -b  main
+
+
+
